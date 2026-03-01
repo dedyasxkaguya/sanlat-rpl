@@ -1,0 +1,8 @@
+@import url('bootstrap/dist/css/bootstrap.min.css');
+body{
+    min-height: 100dvh;
+    padding-top: 10dvh;
+}
+nav{
+    margin-bottom: 4dvh;
+}
