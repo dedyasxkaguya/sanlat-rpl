@@ -49,6 +49,7 @@ const Readsurah = () => {
 
     interface Ayah {
         number: number;
+        audio:string
         text: string;
         numberInSurah: number;
         juz: number;
@@ -80,7 +81,7 @@ const Readsurah = () => {
         type: string;
         direction: string;
     }
-
+    
     const [data, setData] = useState<DataSurah[]>()
     const [surah, setSurah] = useState<Data>()
     const [translation, setTranslation] = useState<DataTranslation>()
@@ -92,7 +93,7 @@ const Readsurah = () => {
             })
     }, [])
     const handleSurah = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        axios.get<TopLevel>(`http://api.alquran.cloud/v1/surah/${e.target.value}`)
+        axios.get<TopLevel>(`http://api.alquran.cloud/v1/surah/${e.target.value}/ar.alafasy`)
             .then(data => {
                 const fetched = data.data
                 setSurah(fetched.data)
@@ -106,7 +107,7 @@ const Readsurah = () => {
     return (
         <main className=''>
             <div className="">
-                <label>Choose your surah</label>
+                {/* <label>Choose your surah</label> */}
                 <select name="" id="" className=' form-select' onChange={(e) => handleSurah(e)}>
                     <option value="default" selected hidden>Pilih surat</option>
                     {data?.map(a => {

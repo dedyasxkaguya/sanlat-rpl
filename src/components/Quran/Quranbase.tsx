@@ -2,6 +2,8 @@ import React from 'react'
 
 interface QuranbaseProps {
     data: Data
+    isSearch: boolean
+    query: string
 }
 interface Data {
     number: number;
@@ -16,7 +18,13 @@ interface Surah {
     englishNameTranslation: string;
 }
 
-const Quranbase = ({ data }: QuranbaseProps) => {
+const Quranbase = ({ data, isSearch, query }: QuranbaseProps) => {
+    let text = data.text.split(" ")
+    if (isSearch) {
+        text.map((a)=>{
+            console.log(a.toLowerCase().includes(query.toLowerCase()))
+        })
+    }
     return (
         <main className=' mt-4 p-2 rounded-4 border shadow'>
             <input type="text" name="" id="" className=' form-control' value={`Q.S-${data?.surah.englishName}/${data?.surah.number}:${data?.numberInSurah}`} disabled />

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Quranbase from './Quranbase'
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Searchayat = () => {
+
+    const [data, setData] = useState<Match[]>()
+    const [query, setQuery] = useState<string>()
+    const [error, setError] = useState<boolean>(false)
     interface Data {
         count: number;
         matches: Match[];
@@ -26,21 +31,30 @@ const Searchayat = () => {
                 const fetched = data.data
                 setData(fetched.data.matches)
             })
+            .catch((err) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Tidak menemukan ayat yang mengandung kata ' + query,
+                    footer: err,
+                    showConfirmButton: false,
+                    toast: true,
+                    timer: 2000
+                })
+                setError(true)
+            })
     }
     useEffect(() => {
         searchAyat("Ramadhan")
     }, []);
     const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value)
-        console.log(e.target.value)
     }
     const handleHit = () => {
         if (query) {
             searchAyat(query)
         }
     }
-    const [data, setData] = useState<Match[]>()
-    const [query, setQuery] = useState<string>()
     return (
         <main>
             <div className=" row">
@@ -51,14 +65,16 @@ const Searchayat = () => {
                 <button type="button" className='col-2 btn btn-outline-success' onClick={() => handleHit()}>
                     <i className="bi bi-search me-2"></i>
                     <span>Cari ayat</span>
-                    </button>
+                </button>
             </div>
             <section className=''>
                 <span>Menampilkan hasil untuk teks {query ? query : 'Ramadhan'}</span>
                 {data?.map((a) => {
-                    return (
-                        <Quranbase data={a} />
-                    )
+                    if (query !== undefined) {
+                        return (
+                            <Quranbase data={a} isSearch={true} query={query} />
+                        )
+                    }
                 })}
             </section>
         </main>

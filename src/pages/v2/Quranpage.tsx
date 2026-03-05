@@ -1,10 +1,10 @@
 import axios, { AxiosHeaders } from 'axios';
 import React, { useEffect, useState } from 'react'
-import Quranbase from '../../components/Quran/Quranbase';
 import Searchayat from '../../components/Quran/Searchayat';
 import { Link, useParams } from 'react-router-dom';
 import Readsurah from '../../components/Quran/Readsurah';
 import Navbar from '../../components/Navbar';
+import Juzcounter from '../../components/Quran/Juzcounter';
 
 interface Data {
     count: number;
@@ -25,11 +25,18 @@ interface Surah {
 }
 
 const Quranpage = () => {
-    const [condition, setCondition] = useState<string>()
-    const handleAyat = () => {
-        setCondition("1")
-    }
+    // const [condition, setCondition] = useState<string>()
     const { active } = useParams()
+    const available = ["ayah", "read", "count"]
+    let isCorrect: boolean = false
+    if (active) {
+        available.map((a)=>{
+            if(a == active){
+                isCorrect = true
+            }
+        })
+    }
+    console.log(isCorrect)
     return (
         <>
             <Navbar />
@@ -45,6 +52,13 @@ const Quranpage = () => {
                             <i className="bi bi-book me-2"></i>
                             <span>Baca Quran</span>
                         </Link>
+                        <Link to="/quran/count" className={` btn btn-light border p-2 px-4 ${active == 'count' ? 'btn-dark' : ''}`}>
+                            <i className="bi bi-calculator me-2"></i>
+                            <span>Hitung Juz</span>
+                        </Link>
+                        {!isCorrect && (
+                            <p className='text-secondary my-auto'>Pilihlah salah satu fitur</p>
+                        )}
                     </div>
                 </div>
                 {active == "ayah" && (
@@ -52,6 +66,14 @@ const Quranpage = () => {
                 )}
                 {active == "read" && (
                     <Readsurah />
+                )}
+                {active == "count" && (
+                    <Juzcounter />
+                )}
+                {!isCorrect && (
+                    <div className="">
+                        Tidak ada fitur yang sesuai dengan rute {active}
+                    </div>
                 )}
             </main>
         </>
