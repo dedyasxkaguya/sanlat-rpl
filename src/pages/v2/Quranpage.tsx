@@ -1,28 +1,28 @@
-import axios, { AxiosHeaders } from 'axios';
-import React, { useEffect, useState } from 'react'
+// import axios, { AxiosHeaders } from 'axios';
+// import React, { useEffect, useState } from 'react'
 import Searchayat from '../../components/Quran/Searchayat';
 import { Link, useParams } from 'react-router-dom';
 import Readsurah from '../../components/Quran/Readsurah';
 import Navbar from '../../components/Navbar';
 import Juzcounter from '../../components/Quran/Juzcounter';
 
-interface Data {
-    count: number;
-    matches: Match[];
-}
+// interface Data {
+//     count: number;
+//     matches: Match[];
+// }
 
-interface Match {
-    number: number;
-    text: string;
-    surah: Surah;
-    numberInSurah: number;
-}
-interface Surah {
-    number: number;
-    name: string;
-    englishName: string;
-    englishNameTranslation: string;
-}
+// interface Match {
+//     number: number;
+//     text: string;
+//     surah: Surah;
+//     numberInSurah: number;
+// }
+// interface Surah {
+//     number: number;
+//     name: string;
+//     englishName: string;
+//     englishNameTranslation: string;
+// }
 
 const Quranpage = () => {
     // const [condition, setCondition] = useState<string>()
@@ -40,7 +40,7 @@ const Quranpage = () => {
     return (
         <>
             <Navbar />
-            <main className="col-8 mx-auto shadow rounded-4 p-4" style={{ marginTop: '12dvh' }}>
+            <main className="col-8 mx-auto shadow rounded-5 p-3" style={{ marginTop: '12dvh' }}>
                 <div className="d-flex gap-2 mb-2 flex-column">
                     <span>Pilih fitur</span>
                     <div className="d-flex gap-2">

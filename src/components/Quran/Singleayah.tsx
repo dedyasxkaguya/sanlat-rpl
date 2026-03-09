@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 interface SingleAYahProps {
     data:Ayah
     dataIdn:Translation
@@ -36,7 +36,7 @@ const handleAudio = (a: number) => {
         const audio: HTMLAudioElement = document.getElementById(`ayah${a}Audio`) as HTMLAudioElement
         audio.play()
     }
-const Singleayah = ({ data, dataIdn, page }: SingleAYahProps) => {
+const Singleayah = ({ data, dataIdn }: SingleAYahProps) => {
     return (
         <div className="d-flex flex-column gap-2 mt-4 rounded-4 p-2">
             {data && dataIdn && (

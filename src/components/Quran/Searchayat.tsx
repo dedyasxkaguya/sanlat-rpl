@@ -7,11 +7,11 @@ const Searchayat = () => {
 
     const [data, setData] = useState<Match[]>()
     const [query, setQuery] = useState<string>()
-    const [error, setError] = useState<boolean>(false)
-    interface Data {
-        count: number;
-        matches: Match[];
-    }
+    // const [error, setError] = useState<boolean>(false)
+    // interface Data {
+    //     count: number;
+    //     matches: Match[];
+    // }
 
     interface Match {
         number: number;
@@ -41,7 +41,7 @@ const Searchayat = () => {
                     toast: true,
                     timer: 2000
                 })
-                setError(true)
+                // setError(true)
             })
     }
     useEffect(() => {

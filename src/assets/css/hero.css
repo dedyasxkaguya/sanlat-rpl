@@ -41,6 +41,11 @@ body {
   background: rgba(30, 80, 40, 0.65);
   mix-blend-mode: multiply;
 }
+.hero-aside {
+  height: 100%;
+  width: fit-content;
+  background-color: rgba(232, 245, 189, 0.6);
+}
 
 nav {
   position: absolute;
@@ -120,6 +125,7 @@ nav .pages-btn:hover {
 .hero-badge img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -133,7 +139,7 @@ nav .pages-btn:hover {
   opacity: 0.4;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   nav {
     padding: 16px 20px;
   }
@@ -144,11 +150,15 @@ nav .pages-btn:hover {
 
   .hero-badge {
     left: 20px;
-    width: 50px;
-    height: 50px;
+    width: 10dvh;
   }
 
   .hero-size {
     right: 20px;
+  }
+  .hero-aside {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(232, 245, 189, 0.6);
   }
 }

@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-interface Data {
-    count: number;
-    matches: Match[];
-}
+import { useEffect, useState } from 'react'
+// interface Data {
+//     count: number;
+//     matches: Match[];
+// }
 
 interface Match {
     number: number;

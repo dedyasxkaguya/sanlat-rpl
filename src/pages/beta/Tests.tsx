@@ -1,5 +1,5 @@
-import React from 'react'
-import Countdown from '../../components/Countdown'
+// import React from 'react'
+// import Countdown from '../../components/Countdown'
 import Quran from '../v1/Quran'
 import Shalat from '../v1/Shalat'
 
@@ -11,7 +11,7 @@ const Tests = () => {
         <div className="p-2">
           <section className=' p-2 shadow rounded-4'>
             <label htmlFor="" className=' fw-semibold'>1. Countdown lebaran</label>
-            <Countdown targetDate={new Date("2026-03-20T00:00:00")} />
+            {/* <Countdown targetDate={new Date("2026-03-20T00:00:00")} /> */}
           </section>
         </div>
         <div className="p-2">

@@ -1,6 +1,6 @@
-import React from 'react'
+// import React from 'react'
 import myHadith from '../assets/data/hadith.json'
-import Aos from 'aos';
+// import Aos from 'aos';
 import Swal from 'sweetalert2';
 
 export interface TopLevel {

@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Quranbase from './Quranbase';
 import Ayahbase from './Ayahbase';
 
 const Readsurah = () => {

@@ -1,12 +1,12 @@
-import React from 'react'
+// import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/v1/Home'
 import Tests from './pages/beta/Tests'
 import Quranpage from './pages/v2/Quranpage'
 import Shalat from './pages/v1/Shalat'
 import Countdownpage from './pages/v1/Countdownpage'
 import Login from './pages/v1/Login'
-import Hadith from './components/Hadith'
+// import Hadith from './components/Hadith'
 
 const App = () => {
   return (

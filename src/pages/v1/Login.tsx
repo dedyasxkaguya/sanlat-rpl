@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import Today from '../../components/Today'
-import { useParams } from 'react-router-dom'
 
 const Login = () => {
-    const {page} = useParams()
+    // const {page} = useParams()
     const [name, setName] = useState<string>()
     const [email, setEmail] = useState<string>()
-    const [nameInvalid, setNameInvalid] = useState<boolean>(true)
+    // const [nameInvalid, setNameInvalid] = useState<boolean>(true)
     const [emailInvalid, setEmailInvalid] = useState<boolean>(true)
     let isLog: boolean
     localStorage.getItem("dataUser") ? isLog = true : isLog = false
@@ -50,9 +49,9 @@ const Login = () => {
                         <input type="text" name="" id="nameInput" className=' form-control mb-2' onChange={(e) => handleName(e)}
                             placeholder='Masukkan nama' />
                         <label htmlFor="nameInput">Masukkan nama</label>
-                        {nameInvalid && (
+                        {/* {nameInvalid && (
                             <div className=' invalid-feedback'>Mohon masukkan nama</div>
-                        )}
+                        )} */}
                     </div>
                     <div className="form-floating mt-2">
                         <input type="email" name="" id="emailInput" className=' form-control mb-2' onChange={(e) => handleRmail(e)}

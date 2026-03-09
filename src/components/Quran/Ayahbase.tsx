@@ -1,7 +1,5 @@
 // @ts-ignore
-import React, { useState } from 'react'
-import Recite from './Recite';
-import { data } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import Singleayah from './Singleayah';
 import Login from '../../pages/v1/Login';
@@ -35,32 +33,53 @@ interface Translation {
 }
 const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
     const userProps = localStorage.getItem("userData") ? localStorage.getItem("userData") : false
-    let isLog : boolean = true
+    let isLog: boolean = true
     const handleAudio = (a: number) => {
-        const audioAll:HTMLAudioElement[] =Array.from(document.querySelectorAll('audio'))
-        audioAll.forEach((a)=>{
+        const audioAll: HTMLAudioElement[] = Array.from(document.querySelectorAll('audio'))
+        audioAll.forEach((a) => {
             a.pause()
         })
 
         const audio: HTMLAudioElement = document.getElementById(`ayah${a}Audio`) as HTMLAudioElement
         audio.play()
     }
-    const handleSave = (a:Ayah,b:Translation) => {
-        if(!userProps){
+    const handleAutoPlay = () => {
+        let i = 0
+        console.log(data[i].audio)
+        const audio = document.createElement('audio')
+        audio.src = data[i].audio
+        audio.play()
+        audio.addEventListener('ended', () => {
+            i++
+            if (data[i].audio) {
+                audio.src = data[i].audio
+                audio.play()
+            }
+        })
+    }
+    const handleSave = (a: Ayah, b: Translation) => {
+        if (!userProps) {
             isLog = false
             location.href = '/login/surah'
         }
-        const ayahObj = {
-            "data":a,
-            "dataIdn":b
-        }
-        console.log(ayahObj)
+        // const ayahObj = {
+        //     "data":a,
+        //     "dataIdn":b
+        // }
         Swal.fire({
-            html:<Singleayah data={a} dataIdn={b} page='saved'/>
+            html: <Singleayah data={a} dataIdn={b} page='saved' />
         })
     }
+    // useEffect(() => {
+    //     handleAutoPlay()
+    // }, [data])
     return (
         <div className="d-flex flex-column gap-2 mt-4 rounded-4 p-2">
+            <button type='button' className=' btn bg-success-subtle border-success shadow-sm mt-2 w-auto'
+                onClick={() => handleAutoPlay()}>
+                <i className="bi bi-soundwave me-2"></i>
+                <span>Putar otomatis</span>
+            </button>
             {data.map((a) => {
                 let translate = (dataIdn[a.numberInSurah - 1])
                 let isFirst: boolean
@@ -74,7 +93,7 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                             <p className='m-2 text-end fs-3 mb-4'>{a.text} ({a.numberInSurah}) </p>
                             <div className=' m-0 fw-light'>{isFirst && (<p>Dengan menyebut nama Allah Yang maha pengasih lagi maha penyayang</p>)}{translate?.text}</div>
                             <section className=" d-flex gap-2">
-                                <button type='button' className=' btn btn-sm btn-success shadow-sm mt-2' onClick={()=>handleSave(a,translate)}>
+                                <button type='button' className=' btn btn-sm btn-success shadow-sm mt-2' onClick={() => handleSave(a, translate)}>
                                     <i className="bi bi-bookmark me-2"></i>
                                     <span>Simpan ayat</span>
                                 </button>
@@ -88,7 +107,7 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                                     <span>Salin ayat</span>
                                 </button>
                             </section>
-                            <audio src={a.audio} controls id={`ayah${a.numberInSurah - 1}Audio`} hidden className=' audioAll'/>
+                            <audio src={a.audio} controls id={`ayah${a.numberInSurah - 1}Audio`} hidden className=' audioAll' />
                         </main>
                     </>
                 )

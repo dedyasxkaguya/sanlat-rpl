@@ -1,25 +1,25 @@
-import axios, { AxiosHeaders } from 'axios';
-import React, { useEffect, useState } from 'react'
-import Quranbase from '../../components/Quran/Quranbase';
+// import axios, { AxiosHeaders } from 'axios';
+import React, { useState } from 'react'
+// import Quranbase from '../../components/Quran/Quranbase';
 import Searchayat from '../../components/Quran/Searchayat';
 
-interface Data {
-    count: number;
-    matches: Match[];
-}
+// interface Data {
+//     count: number;
+//     matches: Match[];
+// }
 
-interface Match {
-    number: number;
-    text: string;
-    surah: Surah;
-    numberInSurah: number;
-}
-interface Surah {
-    number: number;
-    name: string;
-    englishName: string;
-    englishNameTranslation: string;
-}
+// interface Match {
+//     number: number;
+//     text: string;
+//     surah: Surah;
+//     numberInSurah: number;
+// }
+// interface Surah {
+//     number: number;
+//     name: string;
+//     englishName: string;
+//     englishNameTranslation: string;
+// }
 
 const Quranpage = () => {
     const [condition, setCondition] = useState<string>()
