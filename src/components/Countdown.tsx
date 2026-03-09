@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 interface CountProps {
   targetDate: Date
+  event: string
 }
-const Countdown = ({ targetDate }: CountProps) => {
+const Countdown = ({ targetDate, event }: CountProps) => {
   const [result, setResult] = useState<string>()
   const countdownObject = {
     'seconds': "",
@@ -42,10 +43,13 @@ const Countdown = ({ targetDate }: CountProps) => {
       updateCount()
     }, 1000);
     updateCount()
-    return()=> clearInterval(intervalId)
+    return () => clearInterval(intervalId)
   }, [targetDate])
   return (
-    <input type="text" value={result} className=' form-control' disabled={true} />
+    <div className="">
+      <label htmlFor="">{event} akan terjadi dalam</label>
+      <input type="text" value={result} className=' form-control' disabled={true} />
+    </div>
   )
 }
 

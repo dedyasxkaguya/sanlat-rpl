@@ -50,7 +50,7 @@ const Today = () => {
             return "Something wrong"
         }
     }
-    const date = `${transDay(d.getDay())}, ${d.getDate().toString()} ${transMonth(d.getMonth())}`
+    const date = `${transDay(d.getDay()+1)}, ${d.getDate().toString()} ${transMonth(d.getMonth())}`
     return (
         <span className="text-secondary">
             {date}

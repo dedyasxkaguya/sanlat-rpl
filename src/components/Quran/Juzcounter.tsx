@@ -64,8 +64,12 @@ const Juzcounter = () => {
   const [remainDate, setRemainDate] = useState<number>()
   const [pending, isPending] = useState<boolean>(false)
   const dataJuz: juzDataProps[] = Juzdata
+  const d= new Date()
+  const day = (d.getDate() +1).toString().padStart(2 , "0")
+  const month = (d.getMonth() + 1).toString().padStart(2 , "0")
   useEffect(() => {
-    axios.get<TopLevel>(`https://api.aladhan.com/v1/gToH/05-03-2026`)
+    console.log(`https://api.aladhan.com/v1/gToH/${day}-${month}-2026`)
+    axios.get<TopLevel>(`https://api.aladhan.com/v1/gToH/${day}-${month}-2026`)
       .then(data => {
         const fetched = data.data
         setData(fetched.data)
@@ -93,10 +97,10 @@ const Juzcounter = () => {
     <main>
       <div>Hari ini adalah hari <Today /> Tanggal Masehi dan hari ke {data?.hijri.day} {data?.hijri.month.en} Tanggal Hijriyah, </div>
       {rate && (
-        <section className=' row gap-2'>
+        <section className=' row gap-2 p-2'>
           <div className=" p-2 rounded-2 shadow-sm col-5">
             <label htmlFor="juzRange" className=' mb-2'>Sekarang kamu ada di juz berapa ?</label>
-            <input type="range" name="" id="juzRange" className=' form-range' min={1} max={30} defaultValue={1} onChange={(e) => handleJuzRange(e)} autoFocus/>
+            <input type="range" name="" id="juzRange" className=' form-range' min={1} max={29} defaultValue={1} onChange={(e) => handleJuzRange(e)} autoFocus/>
             <span className=' text-secondary'>Juz {juz} {dataJuz[juz - 1].name} ({dataJuz[juz - 1].translation})</span>
           </div>
           <div className=" p-2 rounded-2 shadow-sm col-6">

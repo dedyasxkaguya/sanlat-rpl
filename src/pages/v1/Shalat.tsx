@@ -48,8 +48,8 @@ const Shalat = () => {
                 setData(fetched.data)
                 console.log(fetched.data)
             })
+            getDate()
     }, [])
-    console.log(getDate())
     return (
         <>
         <Navbar />

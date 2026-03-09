@@ -45,7 +45,7 @@ const Searchayat = () => {
             })
     }
     useEffect(() => {
-        searchAyat("Ramadhan")
+        searchAyat("shalat")
     }, []);
     const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value)
@@ -68,7 +68,12 @@ const Searchayat = () => {
                 </button>
             </div>
             <section className=''>
-                <span>Menampilkan hasil untuk teks {query ? query : 'Ramadhan'}</span>
+                {query && (
+                    <span>Menampilkan hasil untuk teks {query} </span>
+                )}
+                {!query && (
+                    <span>Carilah satu kata dalam Al-Quran</span>
+                )}
                 {data?.map((a) => {
                     if (query !== undefined) {
                         return (

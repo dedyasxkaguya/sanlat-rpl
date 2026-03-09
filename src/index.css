@@ -1,13 +1,65 @@
 @import url('bootstrap/dist/css/bootstrap.min.css');
 body{
     min-height: 100dvh;
-    padding-top: 10dvh;
+    padding-top: 6.4dvh;
+    font-family: "Roboto";
 }
 nav{
-    margin-bottom: 4dvh;
+    margin-bottom: 2dvh !important;
+    background-color: #A2CB8B !important;
+    z-index: 99;
 }
 .fixedCenter{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.heroImage{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    max-height: 80dvh;
+    background-image: url('../src/assets/images/image1.JPG');
+    background-size: cover;
+    background-position: center;
+}
+.heroBanner{
+    background-color: rgba(162, 203, 139, .8);
+    backdrop-filter: blur(4px);
+    padding-left: 10dvh;
+}
+.heroBanner p{
+    margin: 0;
+    font-size: 16dvh;
+}
+.descBox{
+    margin-top: 16dvh !important;
+    margin-bottom: 16dvh !important;
+}
+.descBox p{
+    text-align: justify;
+}
+
+.descBoxRpl{
+    margin-top: 16dvh !important;
+    margin-bottom: 16dvh !important;
+    /* color: #134074; */
+    background-color: #134074;
+    /* background-color: #E8F5BD; */
+}
+.btnClipboard{
+    background-color: #A2CB8B;
+    /* color: ; */
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.btnClipboard:hover{
+    background-color: #A2CB8B;
+    /* color: white; */
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: .7;
+}
+/* .descBoxRpl button{
+}
+.descBoxRpl button:hover{
+    background-color: #134074;
+    opacity: .75;
+} */

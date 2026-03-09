@@ -30,8 +30,8 @@ const Quranpage = () => {
     const available = ["ayah", "read", "count"]
     let isCorrect: boolean = false
     if (active) {
-        available.map((a)=>{
-            if(a == active){
+        available.map((a) => {
+            if (a == active) {
                 isCorrect = true
             }
         })
@@ -40,7 +40,7 @@ const Quranpage = () => {
     return (
         <>
             <Navbar />
-            <main className="col-8 mx-auto mt-4 shadow rounded-4 p-4">
+            <main className="col-8 mx-auto shadow rounded-4 p-4" style={{ marginTop: '12dvh' }}>
                 <div className="d-flex gap-2 mb-2 flex-column">
                     <span>Pilih fitur</span>
                     <div className="d-flex gap-2">

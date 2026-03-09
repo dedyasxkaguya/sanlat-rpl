@@ -1,6 +1,10 @@
+// @ts-ignore
 import React, { useState } from 'react'
 import Recite from './Recite';
 import { data } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import Singleayah from './Singleayah';
+import Login from '../../pages/v1/Login';
 
 interface QuranbaseProps {
     data: Ayah[]
@@ -30,7 +34,8 @@ interface Translation {
     sajda: boolean;
 }
 const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
-
+    const userProps = localStorage.getItem("userData") ? localStorage.getItem("userData") : false
+    let isLog : boolean = true
     const handleAudio = (a: number) => {
         const audioAll:HTMLAudioElement[] =Array.from(document.querySelectorAll('audio'))
         audioAll.forEach((a)=>{
@@ -40,7 +45,20 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
         const audio: HTMLAudioElement = document.getElementById(`ayah${a}Audio`) as HTMLAudioElement
         audio.play()
     }
-
+    const handleSave = (a:Ayah,b:Translation) => {
+        if(!userProps){
+            isLog = false
+            location.href = '/login/surah'
+        }
+        const ayahObj = {
+            "data":a,
+            "dataIdn":b
+        }
+        console.log(ayahObj)
+        Swal.fire({
+            html:<Singleayah data={a} dataIdn={b} page='saved'/>
+        })
+    }
     return (
         <div className="d-flex flex-column gap-2 mt-4 rounded-4 p-2">
             {data.map((a) => {
@@ -56,7 +74,7 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                             <p className='m-2 text-end fs-3 mb-4'>{a.text} ({a.numberInSurah}) </p>
                             <div className=' m-0 fw-light'>{isFirst && (<p>Dengan menyebut nama Allah Yang maha pengasih lagi maha penyayang</p>)}{translate?.text}</div>
                             <section className=" d-flex gap-2">
-                                <button type='button' className=' btn btn-sm btn-success shadow-sm mt-2'>
+                                <button type='button' className=' btn btn-sm btn-success shadow-sm mt-2' onClick={()=>handleSave(a,translate)}>
                                     <i className="bi bi-bookmark me-2"></i>
                                     <span>Simpan ayat</span>
                                 </button>
@@ -75,6 +93,9 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                     </>
                 )
             })}
+            {!isLog && (
+                <Login />
+            )}
         </div>
     )
 }

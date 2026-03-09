@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth;
+  padding-bottom: 24dvh;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/image5.JPG");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 80, 40, 0.65);
+  mix-blend-mode: multiply;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+nav .site-name {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+nav .pages-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+nav .pages-btn:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 5;
+  padding: 0 40px;
+  max-width: 700px;
+}
+
+.hero-text h1 {
+  font-size: clamp(42px, 7vw, 80px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-text .learn-more {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.hero-text .learn-more:hover {
+  opacity: 1;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  width: 5rem;
+}
+
+.hero-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero-size {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  z-index: 10;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 16px 20px;
+  }
+
+  .hero-text {
+    padding: 0 20px;
+  }
+
+  .hero-badge {
+    left: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-size {
+    right: 20px;
+  }
+}

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar'
 import Today from '../../components/Today'
+import { useParams } from 'react-router-dom'
 
 const Login = () => {
+    const {page} = useParams()
     const [name, setName] = useState<string>()
     const [email, setEmail] = useState<string>()
     const [nameInvalid, setNameInvalid] = useState<boolean>(true)
