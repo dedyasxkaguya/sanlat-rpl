@@ -57,6 +57,14 @@ nav{
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     opacity: .7;
 }
+.features .btn{
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.features .btn:hover{
+    background-color: #A2CB8B;
+    color: white;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 /* .descBoxRpl button{
 }
 .descBoxRpl button:hover{

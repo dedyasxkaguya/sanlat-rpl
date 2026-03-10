@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import Singleayah from './Singleayah';
-import Login from '../../pages/v1/Login';
+import Login from '../Login';
 
 interface QuranbaseProps {
     data: Ayah[]
