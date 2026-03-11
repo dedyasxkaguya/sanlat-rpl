@@ -48,19 +48,21 @@ const Shalat = () => {
                 setData(fetched.data)
                 console.log(fetched.data)
             })
-            getDate()
+        getDate()
     }, [])
     return (
         <>
-        <Navbar />
+            <Navbar />
             <main className=' col-6 mx-auto mt-5 rounded-4 p-4 shadow'>
                 <p className=' fw-semibold text-center'>Jadwal shalat kota {data?.prov} hari {data?.jadwal[getDate()].tanggal}</p>
 
                 {data && (
                     <table className=' table table-light table-striped table-hover'>
                         <thead>
-                            <th>Nama</th>
-                            <th>Jadwal</th>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Jadwal</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>

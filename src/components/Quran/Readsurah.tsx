@@ -85,19 +85,19 @@ const Readsurah = () => {
     const [surah, setSurah] = useState<Data>()
     const [translation, setTranslation] = useState<DataTranslation>()
     useEffect(() => {
-        axios.get('http://api.alquran.cloud/v1/surah')
+        axios.get('https://api.alquran.cloud/v1/surah')
             .then(data => {
                 const fetched = data.data
                 setData(fetched.data)
             })
     }, [])
     const handleSurah = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        axios.get<TopLevel>(`http://api.alquran.cloud/v1/surah/${e.target.value}/ar.alafasy`)
+        axios.get<TopLevel>(`https://api.alquran.cloud/v1/surah/${e.target.value}/ar.alafasy`)
             .then(data => {
                 const fetched = data.data
                 setSurah(fetched.data)
             })
-        axios.get<TopLevelTranslation>(`http://api.alquran.cloud/v1/surah/${e.target.value}/id.indonesian`)
+        axios.get<TopLevelTranslation>(`https://api.alquran.cloud/v1/surah/${e.target.value}/id.indonesian`)
             .then(data => {
                 const fetched = data.data
                 setTranslation(fetched.data)

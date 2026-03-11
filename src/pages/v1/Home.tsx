@@ -32,7 +32,7 @@ const Home = () => {
                     <i className="bi bi-arrow-up text-black fs-2"></i>
                     <p className=' text-center my-5 fs-2'>Scroll</p>
                 </div>
-                <section className=' mt-5 d-flex justify-content-center align-items-center flex-column col-6 mx-auto descBox' data-aos="fade-up">
+                <section className=' mt-5 d-flex justify-content-center align-items-center flex-column col-8 mx-auto descBox' data-aos="fade-up">
                     <h1>Deskripsi</h1>
                     <p className=' fs-4 fw-light'>
                         Ramadhan bukanlah penghalang kita dalam berkembang, meski kita disibuki dengan kegiatan pendekatan diri dengan tuhan seperti Tarawih, Tadarus, I'tikaf, Mengikuti Majelis Ta'lim dan yang lainnya, bulan ramadhan adalah momen penting buat me-reset diri. di Sanlat X-RPL ini, kita ngembangin project website berbasis rohani. dari kita, oleh kita, untuk keberkahan bersama. ayo jalani bulan penuh ampunan ini dengan produktivitas tinggi, jangan lupa untuk merangkul teman teman kita yang tidak bisa merayakan hangatnya puasa, karena bulan ini ada untuk kita saling bersama.
@@ -40,7 +40,7 @@ const Home = () => {
                 </section>
                 <Signaturebutton />
                 <Hadith />
-                <section className=' mt-5 d-flex justify-content-center align-items-center flex-column col-6 mx-auto descBox shadow rounded-4 features p-4' data-aos="fade-up">
+                <section className=' mt-5 d-flex justify-content-center align-items-center flex-column col-8 mx-auto descBox shadow rounded-4 features p-4' data-aos="fade-up">
                     <h1>Fitur-fitur</h1>
                     <div className=" row row-cols-2 row-cols-lg-4">
                         <div className="p-2">

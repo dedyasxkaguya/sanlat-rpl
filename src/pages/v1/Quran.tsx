@@ -22,7 +22,7 @@ const Quran = () => {
     const [data,setData] = useState<Match>()
     // const [surah, setSurah] = useState<Surah>()
     useEffect(() => {
-        axios.get('http://api.alquran.cloud/v1/search/zina/all/id.indonesian')
+        axios.get('https://api.alquran.cloud/v1/search/zina/all/id.indonesian')
             .then(data => {
                 const fetched = data.data
                 setData(fetched.data.matches[0])

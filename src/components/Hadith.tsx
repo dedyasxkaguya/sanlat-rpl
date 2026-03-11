@@ -54,7 +54,7 @@ const Hadith = () => {
         })
     }
     return (
-        <section className=' mb-5 d-flex justify-content-start align-items-start flex-column col-6 mx-auto p-4 rounded-4 shadow' data-aos="fade-up">
+        <section className=' mb-5 d-flex justify-content-start align-items-start flex-column col-8 mx-auto p-4 rounded-4 shadow' data-aos="fade-up">
             <h1 className=''>Random Hadith of the day</h1>
             <p className=' fs-5 fw-light'>
                 {dataHadith?.hadiths[i]?.text}

@@ -7,6 +7,7 @@ import Shalat from './pages/v1/Shalat'
 import Countdownpage from './pages/v1/Countdownpage'
 import Login from './components/Login'
 import Quest from './pages/v1/Quest'
+import About from './pages/v1/About'
 // import Hadith from './components/Hadith'
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Route path='/login/:page' element={<Login/>}/>
       <Route path='/countdown' element={<Countdownpage/>}/>
       <Route path='/quest' element={<Quest/>}/>
+      <Route path='/about' element={<About/>}/>
     </Routes>
   )
 }

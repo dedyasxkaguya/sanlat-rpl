@@ -9,6 +9,17 @@ nav{
     background-color: #A2CB8B !important;
     z-index: 99;
 }
+.text-rpl{
+    color: #134074;
+}
+.bg-rpl{
+    background-color:#134074 ;
+    color: #fff;
+}
+.bg-rpl-outline{
+    border-color:#134074 ;
+    color: #134074;
+}
 .fixedCenter{
     top: 50%;
     left: 50%;
@@ -64,6 +75,14 @@ nav{
     background-color: #A2CB8B;
     color: white;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.aboutImage{
+    aspect-ratio: 18/9;
+    object-fit: cover;
+}
+.smallAboutImage{
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 /* .descBoxRpl button{
 }

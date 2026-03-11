@@ -18,6 +18,7 @@ const Login = () => {
                 "shalat_sunnah": false,
                 "baca_quran": false,
                 "belajar": false,
+                "bersedekah":false
             }
         }
     }
