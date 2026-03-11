@@ -14,8 +14,8 @@ const Gallery = () => {
         Aos.init()
     })
     return (
-        <main className="row m-0">
-            <section data-aos="fade-up" className=" col-4">
+        <main className="row m-0 mx-auto justify-content-center">
+            <section data-aos="fade-up" className=" col-4 d-none d-md-flex">
                 <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner p-2">
                         <div className="carousel-item active">
@@ -31,7 +31,7 @@ const Gallery = () => {
                     </div>
                 </div>
             </section>
-            <section data-aos="fade-up" className=" col-8 row row-cols-4" data-aos-delay={100}>
+            <section data-aos="fade-up" className=" col-8 row row-cols-4 d-none d-md-flex" data-aos-delay={100}>
                 <div className="p-2 aboutImage">
                     <img src={image1} alt="" className=" h-100 smallAboutImage rounded-4 bg-black" />
                 </div>
@@ -45,7 +45,7 @@ const Gallery = () => {
                     <img src={image4} alt="" className=" h-100 smallAboutImage rounded-4 bg-black" />
                 </div>
             </section>
-            <section className="row row-cols-6" data-aos-delay={100}>
+            <section className="row row-cols-3 row-cols-lg-6" data-aos-delay={100}>
                 {images.map((a, index) => {
                     return (
                         <div className="p-2 aboutImage" data-aos="fade-up" data-aos-delay={100 * index}>
@@ -55,14 +55,14 @@ const Gallery = () => {
                 })}
                 {images.map((a, index) => {
                     return (
-                        <div className="p-2 aboutImage" data-aos="fade-up" data-aos-delay={100 * index * 2}>
+                        <div className="p-2 aboutImage" data-aos="fade-up" data-aos-delay={100 * index * 1.2}>
                             <img src={a} alt="" className=" w-100 smallAboutImage rounded-4 bg-black" />
                         </div>
                     )
                 })}
                 {images.map((a, index) => {
                     return (
-                        <div className="p-2 aboutImage" data-aos="fade-up" data-aos-delay={100 * index * 3}>
+                        <div className="p-2 aboutImage" data-aos="fade-up" data-aos-delay={100 * index * 1.5}>
                             <img src={a} alt="" className=" w-100 smallAboutImage rounded-4 bg-black" />
                         </div>
                     )

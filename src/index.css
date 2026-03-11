@@ -1,88 +1,100 @@
-@import url('bootstrap/dist/css/bootstrap.min.css');
-body{
-    min-height: 100dvh;
-    padding-top: 6.4dvh;
-    font-family: "Roboto";
+@import url("bootstrap/dist/css/bootstrap.min.css");
+body {
+  min-height: 100dvh;
+  padding-top: 6.4dvh;
+  padding-bottom: 6.4dvh;
+  font-family: "Roboto";
 }
-nav{
-    margin-bottom: 2dvh !important;
-    background-color: #A2CB8B !important;
-    z-index: 99;
+nav {
+  margin-bottom: 2dvh !important;
+  background-color: #a2cb8b !important;
+  z-index: 99;
 }
-.text-rpl{
-    color: #134074;
+.text-rpl {
+  color: #134074;
 }
-.bg-rpl{
-    background-color:#134074 ;
-    color: #fff;
+.bg-rpl {
+  background-color: #134074;
+  color: #fff;
 }
-.bg-rpl-outline{
-    border-color:#134074 ;
-    color: #134074;
+.border-rpl {
+  border: 1px solid #134074;
+  /* color: #134074; */
 }
-.fixedCenter{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.btn-rpl {
+  background-color: #134074;
+  color: #fff;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.heroImage{
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    max-height: 80dvh;
-    background-image: url('../src/assets/images/image1.JPG');
-    background-size: cover;
-    background-position: center;
+.btn-rpl:hover {
+  background-color: #134074;
+  color: #fff;
+  opacity: 0.75;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.heroBanner{
-    background-color: rgba(162, 203, 139, .8);
-    backdrop-filter: blur(4px);
-    padding-left: 10dvh;
+.fixedCenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.heroBanner p{
-    margin: 0;
-    font-size: 16dvh;
+.heroImage {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  max-height: 80dvh;
+  background-image: url("../src/assets/images/image1.JPG");
+  background-size: cover;
+  background-position: center;
 }
-.descBox{
-    margin-top: 16dvh !important;
-    margin-bottom: 16dvh !important;
+.heroBanner {
+  background-color: rgba(162, 203, 139, 0.8);
+  backdrop-filter: blur(4px);
+  padding-left: 10dvh;
 }
-.descBox p{
-    text-align: justify;
+.heroBanner p {
+  margin: 0;
+  font-size: 16dvh;
+}
+.descBox {
+  margin-top: 16dvh !important;
+  margin-bottom: 16dvh !important;
+}
+.descBox p {
+  text-align: justify;
 }
 
-.descBoxRpl{
-    margin-top: 16dvh !important;
-    margin-bottom: 16dvh !important;
-    /* color: #134074; */
-    background-color: #134074;
-    /* background-color: #E8F5BD; */
+.descBoxRpl {
+  margin-top: 16dvh !important;
+  margin-bottom: 16dvh !important;
+  /* color: #134074; */
+  background-color: #134074;
+  /* background-color: #E8F5BD; */
 }
-.btnClipboard{
-    background-color: #A2CB8B;
-    /* color: ; */
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+.btnClipboard {
+  background-color: #a2cb8b;
+  /* color: ; */
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.btnClipboard:hover{
-    background-color: #A2CB8B;
-    /* color: white; */
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    opacity: .7;
+.btnClipboard:hover {
+  background-color: #a2cb8b;
+  /* color: white; */
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0.7;
 }
-.features .btn{
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+.features .btn {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.features .btn:hover{
-    background-color: #A2CB8B;
-    color: white;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+.features .btn:hover {
+  background-color: #a2cb8b;
+  color: white;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.aboutImage{
-    aspect-ratio: 18/9;
-    object-fit: cover;
+.aboutImage {
+  aspect-ratio: 18/9;
+  object-fit: cover;
 }
-.smallAboutImage{
-    aspect-ratio: 1/1;
-    object-fit: cover;
+.smallAboutImage {
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 /* .descBoxRpl button{
 }
@@ -90,3 +102,18 @@ nav{
     background-color: #134074;
     opacity: .75;
 } */
+footer {
+    background-color: #a2cb8b;
+    margin-bottom: -6.4dvh;
+}
+@media (max-width: 720px) {
+  .fs-5 {
+    font-size: 0.8rem !important;
+  }
+  .fs-4 {
+    font-size: 1rem !important;
+  }
+  .fs-3 {
+    font-size: 1.2rem !important;
+  }
+}

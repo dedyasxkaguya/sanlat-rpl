@@ -53,9 +53,8 @@ const Shalat = () => {
     return (
         <>
             <Navbar />
-            <main className=' col-6 mx-auto mt-5 rounded-4 p-4 shadow'>
+            <main className=' col-10 col-lg-8 mx-auto mt-5 rounded-4 p-4 shadow'>
                 <p className=' fw-semibold text-center'>Jadwal shalat kota {data?.prov} hari {data?.jadwal[getDate()].tanggal}</p>
-
                 {data && (
                     <table className=' table table-light table-striped table-hover'>
                         <thead>

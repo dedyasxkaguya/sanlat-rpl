@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-
 interface CountProps {
   targetDate: Date
   event: string
 }
 const Countdown = ({ targetDate, event }: CountProps) => {
   const [result, setResult] = useState<string>()
+  const [resultSmall, setResultSmall] = useState<string>()
   const countdownObject = {
     'seconds': "",
     'minutes': "",
@@ -35,6 +35,7 @@ const Countdown = ({ targetDate, event }: CountProps) => {
         countdownObject.months = (months % 12).toString().length < 2 ? "0" + (months % 12).toString() : (months % 12).toString()
         countdownObject.years = (years).toString().length < 2 ? "0" + (years).toString() : (years).toString()
         setResult(`${countdownObject.years} Tahun : ${countdownObject.months} Bulan : ${countdownObject.days} Hari : ${countdownObject.hours} Jam : ${countdownObject.minutes} Menit : ${countdownObject.seconds} Detik`)
+        setResultSmall(`${countdownObject.years} Thn : ${countdownObject.months} Bln : ${countdownObject.days} H : ${countdownObject.hours} Jam`)
       } else {
         countdownObject.expired = true
       }
@@ -48,7 +49,8 @@ const Countdown = ({ targetDate, event }: CountProps) => {
   return (
     <div className="">
       <label htmlFor="">{event} akan terjadi dalam</label>
-      <input type="text" value={result} className=' form-control' disabled={true} />
+      <input type="text" value={result} className=' form-control d-none d-lg-block' disabled={true} />
+      <input type="text" value={resultSmall} className=' form-control d-lg-none' disabled={true} />
     </div>
   )
 }

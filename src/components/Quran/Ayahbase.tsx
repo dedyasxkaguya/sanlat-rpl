@@ -89,21 +89,26 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                 isFirst = false
                 return (
                     <>
-                        <main className='p-4 rounded-2 border shadow'>
-                            <p className='m-2 text-end fs-3 mb-4'>{a.text} ({a.numberInSurah}) </p>
-                            <div className=' m-0 fw-light'>{isFirst && (<p>Dengan menyebut nama Allah Yang maha pengasih lagi maha penyayang</p>)}{translate?.text}</div>
-                            <section className=" d-flex gap-2">
-                                <button type='button' className=' btn btn-sm btn-success shadow-sm mt-2' onClick={() => handleSave(a, translate)}>
+                        <main className='p-2 rounded-4 border shadow'>
+                            <p className='m-2 text-end fs-3 mb-4'>
+                                <span>{a.text}</span> 
+                                <span className=' d-none d-lg-inline'>({a.numberInSurah})</span>
+                            </p>
+                            <div className=' m-0 fw-light'>
+                                {isFirst && (<p>Dengan menyebut nama Allah Yang maha pengasih lagi maha penyayang</p>)}{translate?.text}
+                            </div>
+                            <section className=" d-flex gap-2 flex-column">
+                                <button type='button' className=' btn btn-sm btn-success shadow-sm mt-2  d-none d-lg-block' onClick={() => handleSave(a, translate)}>
                                     <i className="bi bi-bookmark me-2"></i>
                                     <span>Simpan ayat</span>
                                 </button>
                                 <button type='button' className=' btn btn-sm bg-success-subtle border-success shadow-sm mt-2'
                                     onClick={() => handleAudio(a.numberInSurah - 1)}>
-                                    <i className="bi bi-soundwave me-2"></i>
+                                    <i className="bi bi-soundwave me-2 d-none d-lg-inline"></i>
                                     <span>Dengarkan Ayat</span>
                                 </button>
                                 <button type='button' className=' btn btn-sm btn-light shadow-sm mt-2'>
-                                    <i className="bi bi-clipboard me-2"></i>
+                                    <i className="bi bi-clipboard me-2 d-none d-lg-inline"></i>
                                     <span>Salin ayat</span>
                                 </button>
                             </section>

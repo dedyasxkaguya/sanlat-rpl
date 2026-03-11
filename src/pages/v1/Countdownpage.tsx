@@ -10,6 +10,7 @@ const Countdownpage = () => {
         setEvent(e.target.selectedOptions[0].textContent)
     }
     const dates = [
+        { masehi: 2026, hijriyah: 1447, date: "2026-03-20", event: "Idul Fitri" },
         { masehi: 2026, hijriyah: 1447, date: "2026-05-27", event: "Idul Adha" },
         { masehi: 2026, hijriyah: 1448, date: "2026-06-16", event: "Tahun Baru Islam" },
         { masehi: 2026, hijriyah: 1448, date: "2026-08-25", event: "Maulid Nabi" },
@@ -126,7 +127,7 @@ const Countdownpage = () => {
     return (
         <>
             <Navbar />
-            <main className="col-8 mx-auto p-4 rounded-4 shadow " style={{marginTop:'12dvh'}}>
+            <main className="col-10 col-lg-8 mx-auto p-4 rounded-4 shadow " style={{marginTop:'12dvh'}}>
                 <div className=" mb-4 ">
                     <label htmlFor="">Pilih Hari besar Islam</label>
                     <select name="" id="" className=' form-select' onChange={(e)=>handleEvent(e)}>

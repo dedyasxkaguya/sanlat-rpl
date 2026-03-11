@@ -15,12 +15,22 @@ const About = () => {
     return (
         <>
             <Navbar />
-            <main className=' col-8 mx-auto' style={{ marginTop: "12dvh" }}>
-                <section data-aos="fade-up" className=" mb-4">
+            <main className=' col-10 col-lg-8 mx-auto' style={{ marginTop: "12dvh" }}>
+                <section data-aos="fade-up" className=" mb-2">
                     <p className=" fs-2 text-rpl fw-semibold">About Us, X-RPL</p>
                     <div className="p-2">
                         <img src={image4} className="d-block w-100 aboutImage rounded-4" alt="..." />
                     </div>
+                </section>
+                <section className=" d-flex gap-2 gap-lg-4 mx-auto justify-content-center align-items-center p-4 mb-2">
+                    <button type="button" onClick={() => handleChoice(0)} className={`btn btn-lg ${choice==0 ? "btn-rpl" : "btn-light"} shadow`}>
+                        <span>Gallery</span>
+                        <i className="bi bi-images mx-2 d-none d-lg-inline"></i>
+                    </button>
+                    <button type="button" onClick={() => handleChoice(1)} className={`btn btn-lg ${choice==1 ? "btn-rpl" : "btn-light"} shadow`}>
+                        <span>Structure</span>
+                        <i className="bi bi-card-text mx-2 d-none d-lg-inline"></i>
+                    </button>
                 </section>
                 {choice == 0 && (
                     <Gallery />

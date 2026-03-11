@@ -70,7 +70,7 @@ const Login = () => {
         console.log(isLog)
     }, [])
     return (
-        <section className=' bg-white position-absolute fixedCenter p-4 rounded-4 shadow'>
+        <section className=' bg-white position-absolute fixedCenter p-4 rounded-4 shadow col-8 col-lg-4'>
             <p className=' form-label'>Masukkan data sebelum menjalani <i>Daily Quest</i></p>
             <div className=" form-floating">
                 <input type="text" name="" id="nameInput" className=' form-control mb-2' onChange={(e) => handleName(e)}

@@ -60,7 +60,7 @@ const Quest = () => {
             day: "numeric",
             month: "long"
         })
-        console.log(now,userLocal.quest.tanggal)
+        console.log(now, userLocal.quest.tanggal)
         if (now == userLocal.quest.tanggal) {
             console.log("Tanggal valid")
         } else {
@@ -73,7 +73,7 @@ const Quest = () => {
                 userLocal.quest.data.belajar = false
                 userLocal.quest.data.bersedekah = false
                 userLocal.quest.tanggal = now
-                localStorage.setItem("userData",JSON.stringify(userLocal))
+                localStorage.setItem("userData", JSON.stringify(userLocal))
                 setUser(userLocal)
                 setRate(completeRate)
             }
@@ -157,10 +157,25 @@ const Quest = () => {
                     userLocal.quest.data.baca_quran = false
                     userLocal.quest.data.belajar = false
                     userLocal.quest.data.bersedekah = false
-                    localStorage.setItem("userData",JSON.stringify(userLocal))
+                    localStorage.setItem("userData", JSON.stringify(userLocal))
                     setUser(userLocal)
                     setRate(completeRate)
                 }
+            }
+        })
+    }
+    const handleLogout = () => {
+        Swal.fire({
+            icon: "question",
+            title: "Reset ? ",
+            text: "Apakah kamu yakin, perubahan ini tidak bisa diulang",
+            showCancelButton: true,
+            confirmButtonText: "Ya, aku yakin",
+            cancelButtonText: "Tidak"
+        }).then(res => {
+            if (res.isConfirmed) { 
+                localStorage.removeItem("userData")
+                location.href='/'
             }
         })
     }
@@ -171,77 +186,83 @@ const Quest = () => {
                 <Login />
             )}
             {isLod && user && (
-                <main className=" col-6 mx-auto p-4 rounded-4 shadow" style={{ marginTop: '12dvh' }} data-aos="fade-up">
+                <main className=" col-10 col-lg-8 mx-auto p-4 rounded-4 shadow" style={{ marginTop: '12dvh' }} data-aos="fade-up">
                     <p className=" fs-3">Daily Quest</p>
                     <p className=" text-secondary">Halo {user?.user.name}, siap untuk menjalani tugas hari ini . <Today /></p>
-                    <section className=" p-4 rounded-2 shadow-sm">
-                        <p className=" fs-5">List Quest</p>
-                        <ul className=" list-group">
-                            <li className=" list-group-item d-flex justify-content-between align-items-center">
-                                <p className=" m-2">Membaca Qur'an minimal 1 juz</p>
-                                <div className=" m-2">
-                                    Status : {user.quest.data.baca_quran ?
-                                        <button type="button" className='btn btn-success p-2 rounded-2 m-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
-                                        <button type="button" className='btn btn-warning p-2 rounded-2 m-2' onClick={() => handleComplete(2)}>
-                                            Belum
-                                        </button>
-                                    }
-                                </div>
-                            </li>
-                            <li className=" list-group-item d-flex justify-content-between align-items-center">
-                                <p className=" m-2">Mempelajari satu hal baru</p>
-                                <div className=" m-2">
-                                    Status : {user.quest.data.belajar ?
-                                        <button type="button" className='btn btn-success p-2 rounded-2 m-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
-                                        <button type="button" className='btn btn-warning p-2 rounded-2 m-2' onClick={() => handleComplete(3)}>
-                                            Belum
-                                        </button>
-                                    }
-                                </div>
-                            </li>
-                            <li className=" list-group-item d-flex justify-content-between align-items-center">
-                                <p className=" m-2">Melakukan salat sunnah</p>
-                                <div className=" m-2">
-                                    Status : {user.quest.data.shalat_sunnah ?
-                                        <button type="button" className='btn btn-success p-2 rounded-2 m-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
-                                        <button type="button" className='btn btn-warning p-2 rounded-2 m-2' onClick={() => handleComplete(1)}>
-                                            Belum
-                                        </button>
-                                    }
-                                </div>
-                            </li>
-                            <li className=" list-group-item d-flex justify-content-between align-items-center">
-                                <p className=" m-2">Menyelesaikan 5 salat fardu</p>
-                                <div className=" m-2">
-                                    Status : {user.quest.data.shalat_wajib ?
-                                        <button type="button" className='btn btn-success p-2 rounded-2 m-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
-                                        <button type="button" className='btn btn-warning p-2 rounded-2 m-2' onClick={() => handleComplete(0)}>
-                                            Belum
-                                        </button>
-                                    }
-                                </div>
-                            </li>
-                            <li className=" list-group-item d-flex justify-content-between align-items-center">
-                                <p className=" m-2">Bersedekah</p>
-                                <div className=" m-2">
-                                    Status : {user.quest.data.bersedekah ?
-                                        <button type="button" className='btn btn-success p-2 rounded-2 m-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
-                                        <button type="button" className='btn btn-warning p-2 rounded-2 m-2' onClick={() => handleComplete(4)}>
-                                            Belum
-                                        </button>
-                                    }
-                                </div>
-                            </li>
-                        </ul>
+                    {/* <section className=" p-4 rounded-2 shadow-sm"> */}
+                    <p className=" fs-5">List Quest</p>
+                    <ul className=" list-group">
+                        <li className=" list-group-item d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-center">
+                            <p className=" m-2 my-0 my-lg-2">Membaca Qur'an minimal 1 juz</p>
+                            <div className=" m-2 my-0 my-lg-2">
+                                Status : {user.quest.data.baca_quran ?
+                                    <button type="button" className='btn btn-success p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
+                                    <button type="button" className='btn btn-warning p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleComplete(2)}>
+                                        Belum
+                                    </button>
+                                }
+                            </div>
+                        </li>
+                        <li className=" list-group-item d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-center">
+                            <p className=" m-2 my-0 my-lg-2">Mempelajari satu hal baru</p>
+                            <div className=" m-2 my-0 my-lg-2">
+                                Status : {user.quest.data.belajar ?
+                                    <button type="button" className='btn btn-success p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
+                                    <button type="button" className='btn btn-warning p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleComplete(3)}>
+                                        Belum
+                                    </button>
+                                }
+                            </div>
+                        </li>
+                        <li className=" list-group-item d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-center">
+                            <p className=" m-2 my-0 my-lg-2">Melakukan salat sunnah</p>
+                            <div className=" m-2 my-0 my-lg-2">
+                                Status : {user.quest.data.shalat_sunnah ?
+                                    <button type="button" className='btn btn-success p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
+                                    <button type="button" className='btn btn-warning p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleComplete(1)}>
+                                        Belum
+                                    </button>
+                                }
+                            </div>
+                        </li>
+                        <li className=" list-group-item d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-center">
+                            <p className=" m-2 my-0 my-lg-2">Menyelesaikan 5 salat fardu</p>
+                            <div className=" m-2 my-0 my-lg-2">
+                                Status : {user.quest.data.shalat_wajib ?
+                                    <button type="button" className='btn btn-success p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
+                                    <button type="button" className='btn btn-warning p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleComplete(0)}>
+                                        Belum
+                                    </button>
+                                }
+                            </div>
+                        </li>
+                        <li className=" list-group-item d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-center">
+                            <p className=" m-2 my-0 my-lg-2">Bersedekah</p>
+                            <div className=" m-2 my-0 my-lg-2">
+                                Status : {user.quest.data.bersedekah ?
+                                    <button type="button" className='btn btn-success p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleAlreadyComplete()}>Sudah</button> :
+                                    <button type="button" className='btn btn-warning p-2 rounded-2 m-2 my-0 my-lg-2' onClick={() => handleComplete(4)}>
+                                        Belum
+                                    </button>
+                                }
+                            </div>
+                        </li>
+                    </ul>
+                    <div className="d-flex gap-2">
                         <button type="button" className=" btn btn-danger mb-4 mt-2" onClick={() => handleReset()}>
                             <span>Reset</span>
                             <i className=" bi bi-arrow-repeat mx-2"></i>
                         </button>
-                        <p>Progress Hari ini</p>
-                        <div className="progress shadow" role="progressbar" aria-label="" aria-valuenow={rate} aria-valuemin={0} aria-valuemax={100} style={{ height: "1.5rem" }}>
-                            <div className="progress-bar" style={{ width: `${rate}%` }}>{rate}%</div>
-                        </div>
-                    </section>
+                        <button type="button" className=" btn btn-outline-danger mb-4 mt-2" onClick={() => handleLogout()}>
+                            <span>Logout</span>
+                            <i className=" bi bi-box-arrow-right mx-2"></i>
+                        </button>
+                    </div>
+                    <p>Progress Hari ini</p>
+                    <div className="progress shadow" role="progressbar" aria-label="" aria-valuenow={rate} aria-valuemin={0} aria-valuemax={100} style={{ height: "1.5rem" }}>
+                        <div className="progress-bar" style={{ width: `${rate}%` }}>{rate}%</div>
+                    </div>
+                    {/* </section> */}
                 </main>
             )}
         </>

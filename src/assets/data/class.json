@@ -1,0 +1,196 @@
+{
+  "teacher": {
+    "name": "Alzaro Rashad Prakas",
+    "role": "Teacher",
+    "no": 0
+  },
+  "executives": [
+    {
+      "name": "M. Fauzan Kamal Putra",
+      "role": "Class Officer",
+      "no": 21
+    },
+
+    {
+      "name": "Callyla Sakhi Faiha",
+      "role": "Vice Officer",
+      "no": 12
+    },
+
+    {
+      "name": "Intan Nurhikmah",
+      "role": "Secretary",
+      "no": 18
+    },
+
+    {
+      "name": "Nazmu Toriq",
+      "role": "Secretary",
+      "no": 26
+    },
+
+    {
+      "name": "Siti Syeera",
+      "role": "Accountant",
+      "no": 35
+    },
+
+    {
+      "name": "Marcellino",
+      "role": "Accountant",
+      "no": 20
+    }
+  ],
+  "students": [
+    {
+      "name": "Adhelia Khairunissa Tofari",
+      "role": "Attendant",
+      "no": 1
+    },
+    {
+      "name": "Adilah Hammam Akram",
+      "role": "Attendant",
+      "no": 2
+    },
+    {
+      "name": "Adinda Afifah Putri",
+      "role": "Attendant",
+      "no": 3
+    },
+    {
+      "name": "Adzan Ahlil Fiqri",
+      "role": "Attendant",
+      "no": 4
+    },
+    {
+      "name": "Aira Saskia Sahwa",
+      "role": "Attendant",
+      "no": 5
+    },
+    {
+      "name": "Almira Rakhadhiya Aryacitadi",
+      "role": "Attendant",
+      "no": 6
+    },
+    {
+      "name": "Annisa Maharani",
+      "role": "Attendant",
+      "no": 7
+    },
+    {
+      "name": "Annisah Agustin",
+      "role": "Attendant",
+      "no": 8
+    },
+    {
+      "name": "Arif Raffy Fadlurahman",
+      "role": "Attendant",
+      "no": 9
+    },
+    {
+      "name": "Aryo Aji Sadewo",
+      "role": "Attendant",
+      "no": 10
+    },
+    {
+      "name": "Cahaya",
+      "role": "Attendant",
+      "no": 11
+    },
+    {
+      "name": "Dedy Anang Setiawan",
+      "role": "Attendant",
+      "no": 13
+    },
+    {
+      "name": "Deje Enne Dani Rosaline",
+      "role": "Attendant",
+      "no": 14
+    },
+    {
+      "name": "Dewa Nyoman Zed Zamuel Zouseuf",
+      "role": "Attendant",
+      "no": 15
+    },
+    {
+      "name": "Fersya Wulanda",
+      "role": "Attendant",
+      "no": 16
+    },
+    {
+      "name": "Ihsan Hafidz Assidiq",
+      "role": "Attendant",
+      "no": 17
+    },
+    {
+      "name": "K'satria Ali",
+      "role": "Attendant",
+      "no": 19
+    },
+    {
+      "name": "Muhammad Rafa Fadilah",
+      "role": "Attendant",
+      "no": 22
+    },
+    {
+      "name": "Najwa Fajrina Ayatul Husna",
+      "role": "Attendant",
+      "no": 23
+    },
+    {
+      "name": "Nauval Arief Hibatulloh",
+      "role": "Attendant",
+      "no": 24
+    },
+    {
+      "name": "Naysheilla Bilqis Heryanto",
+      "role": "Attendant",
+      "no": 25
+    },
+    {
+      "name": "Qisya Awfiyah Ramadhani",
+      "role": "Attendant",
+      "no": 27
+    },
+    {
+      "name": "Rambuana Ahmad Adnan",
+      "role": "Attendant",
+      "no": 28
+    },
+    {
+      "name": "Rayhan Saputra",
+      "role": "Attendant",
+      "no": 29
+    },
+    {
+      "name": "Rayvan Irfansyah",
+      "role": "Attendant",
+      "no": 30
+    },
+    {
+      "name": "Rivael Lionel Messi Boryan",
+      "role": "Attendant",
+      "no": 31
+    },
+    {
+      "name": "Saddam Qadafi Nurama",
+      "role": "Attendant",
+      "no": 32
+    },
+    {
+      "name": "Safa Oktafianti",
+      "role": "Attendant",
+      "no": 33
+    },
+    {
+      "name": "Salsa Nabila",
+      "role": "Attendant",
+      "no": 34
+    },
+    {
+      "name": "Syadira Putri Aulia",
+      "role": "Attendant",
+      "no": 36
+    }
+  ]
+}

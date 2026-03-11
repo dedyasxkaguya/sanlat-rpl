@@ -54,7 +54,7 @@ const Hadith = () => {
         })
     }
     return (
-        <section className=' mb-5 d-flex justify-content-start align-items-start flex-column col-8 mx-auto p-4 rounded-4 shadow' data-aos="fade-up">
+        <section className=' mb-5 d-flex justify-content-start align-items-start flex-column col-10 col-lg-8 mx-auto p-4 rounded-4 shadow' data-aos="fade-up">
             <h1 className=''>Random Hadith of the day</h1>
             <p className=' fs-5 fw-light'>
                 {dataHadith?.hadiths[i]?.text}
@@ -69,7 +69,7 @@ const Hadith = () => {
                 <span>Book {dataHadith?.hadiths[i]?.reference.book} / </span>
                 <span>Hadith {dataHadith?.hadiths[i]?.reference.hadith} </span>
             </p>
-            <p className=' fs-4 fw-light m-0'>#Semoga Survive !</p>
+            <p className=' fs-5 fw-light'>#Semoga Survive !</p>
             <button type='button' className=' btn btn-lg btnClipboard' onClick={() => handleSave()}>
                 <span>Copy to clipboard</span>
                 <i className="bi bi-clipboard mx-2"></i>
