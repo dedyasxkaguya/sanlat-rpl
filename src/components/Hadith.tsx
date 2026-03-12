@@ -70,7 +70,7 @@ const Hadith = () => {
                 <span>Hadith {dataHadith?.hadiths[i]?.reference.hadith} </span>
             </p>
             <p className=' fs-5 fw-light'>#Semoga Survive !</p>
-            <button type='button' className=' btn btn-lg btnClipboard' onClick={() => handleSave()}>
+            <button type='button' className=' btn btnClipboard' onClick={() => handleSave()}>
                 <span>Copy to clipboard</span>
                 <i className="bi bi-clipboard mx-2"></i>
             </button>

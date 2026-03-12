@@ -8,6 +8,7 @@ import Hadith from '../../components/Hadith';
 import Signaturebutton from '../../components/Signaturebutton';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import Messages from '../../components/Messages';
 const Home = () => {
     useEffect(() => {
         Aos.init()
@@ -41,7 +42,8 @@ const Home = () => {
                 </section>
                 <Signaturebutton />
                 <Hadith />
-                <section className=' mt-5 d-flex justify-content-center align-items-center flex-column col-10 col-lg-8 mx-auto descBox shadow rounded-4 features p-4' data-aos="fade-up">
+                <section 
+                className=' mt-5 d-flex justify-content-center align-items-center flex-column col-10 col-lg-8 mx-auto descBox shadow rounded-4 features p-4' data-aos="fade-up">
                     <h1>Fitur-fitur</h1>
                     <div className=" row row-cols-2 row-cols-lg-4">
                         <div className="p-2">
@@ -70,6 +72,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+                <Messages />
                 <Footer />
             </main>
         </>

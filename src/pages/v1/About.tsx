@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import image4 from "../../assets/images/image4.JPG"
+import image5 from "../../assets/images/image5.JPG"
 import Navbar from "../../components/Navbar"
 import Aos from "aos"
 import Gallery from "../../components/Gallery"
@@ -19,7 +19,7 @@ const About = () => {
                 <section data-aos="fade-up" className=" mb-2">
                     <p className=" fs-2 text-rpl fw-semibold">About Us, X-RPL</p>
                     <div className="p-2">
-                        <img src={image4} className="d-block w-100 aboutImage rounded-4" alt="..." />
+                        <img src={image5} className="d-block w-100 aboutImage rounded-4" alt="..." />
                     </div>
                 </section>
                 <section className=" d-flex gap-2 gap-lg-4 mx-auto justify-content-center align-items-center p-4 mb-2">
@@ -29,7 +29,7 @@ const About = () => {
                     </button>
                     <button type="button" onClick={() => handleChoice(1)} className={`btn btn-lg ${choice==1 ? "btn-rpl" : "btn-light"} shadow`}>
                         <span>Structure</span>
-                        <i className="bi bi-card-text mx-2 d-none d-lg-inline"></i>
+                        <i className="bi bi-diagram-3 mx-2 d-none d-lg-inline"></i>
                     </button>
                 </section>
                 {choice == 0 && (

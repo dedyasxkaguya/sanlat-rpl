@@ -102,9 +102,13 @@ nav {
     background-color: #134074;
     opacity: .75;
 } */
+.gallery {
+  image-rendering: optimizeSpeed;
+}
 footer {
-    background-color: #a2cb8b;
-    margin-bottom: -6.4dvh;
+  color: #a2cb8b;
+  background-color: #000;
+  margin-bottom: -6.4dvh;
 }
 @media (max-width: 720px) {
   .fs-5 {

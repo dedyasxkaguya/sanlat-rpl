@@ -1,6 +1,6 @@
 import Aos from 'aos'
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 interface TopLevel {
     user: User;
 }
@@ -15,6 +15,8 @@ const Navbar = () => {
     let isLog: boolean
     localStorage.getItem("userData") ? isLog = true : isLog = false
     const data: TopLevel = JSON.parse(localStorage.getItem("userData")!)
+    const pathNow:string = useLocation().pathname
+    const locationNow:string = (pathNow.split("/")[1])
     return (
         <nav className=' p-2 p-lg-4 d-flex justify-content-between align-items-center position-fixed w-100 top-0 shadow' data-aos="fade-down">
             {isLog && (
@@ -29,7 +31,7 @@ const Navbar = () => {
             )}
             <div className="btn-group">
                 <button type="button" className="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span className=' me-2'>Pages</span>
+                    <span className=' me-2 text-capitalize'>{locationNow!=='' ? locationNow : "Pages"}</span>
                 </button>
                 <ul className="dropdown-menu">
                     <li>

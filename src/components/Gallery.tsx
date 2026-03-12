@@ -14,7 +14,7 @@ const Gallery = () => {
         Aos.init()
     })
     return (
-        <main className="row m-0 mx-auto justify-content-center">
+        <main className="row m-0 mx-auto justify-content-center gallery">
             <section data-aos="fade-up" className=" col-4 d-none d-md-flex">
                 <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner p-2">

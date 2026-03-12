@@ -36,7 +36,6 @@ const Quranpage = () => {
             }
         })
     }
-    console.log(isCorrect)
     return (
         <>
             <Navbar />

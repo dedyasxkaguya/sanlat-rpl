@@ -60,22 +60,24 @@ const Quest = () => {
             day: "numeric",
             month: "long"
         })
-        console.log(now, userLocal.quest.tanggal)
-        if (now == userLocal.quest.tanggal) {
-            console.log("Tanggal valid")
-        } else {
-            console.log("Tanggal tidak valid")
-            let completeRate: number = 0
-            if (userLocal) {
-                userLocal.quest.data.shalat_wajib = false
-                userLocal.quest.data.shalat_sunnah = false
-                userLocal.quest.data.baca_quran = false
-                userLocal.quest.data.belajar = false
-                userLocal.quest.data.bersedekah = false
-                userLocal.quest.tanggal = now
-                localStorage.setItem("userData", JSON.stringify(userLocal))
-                setUser(userLocal)
-                setRate(completeRate)
+        if (userLocal) {
+
+            if (now == userLocal.quest.tanggal) {
+                console.log("Tanggal valid")
+            } else {
+                console.log("Tanggal tidak valid")
+                let completeRate: number = 0
+                if (userLocal) {
+                    userLocal.quest.data.shalat_wajib = false
+                    userLocal.quest.data.shalat_sunnah = false
+                    userLocal.quest.data.baca_quran = false
+                    userLocal.quest.data.belajar = false
+                    userLocal.quest.data.bersedekah = false
+                    userLocal.quest.tanggal = now
+                    localStorage.setItem("userData", JSON.stringify(userLocal))
+                    setUser(userLocal)
+                    setRate(completeRate)
+                }
             }
         }
     }
@@ -173,9 +175,9 @@ const Quest = () => {
             confirmButtonText: "Ya, aku yakin",
             cancelButtonText: "Tidak"
         }).then(res => {
-            if (res.isConfirmed) { 
+            if (res.isConfirmed) {
                 localStorage.removeItem("userData")
-                location.href='/'
+                location.href = '/'
             }
         })
     }
