@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import image5 from "../../assets/images/image5.JPG"
+import image5 from "../../assets/images/image4.jpg"
 import Navbar from "../../components/Navbar"
 import Aos from "aos"
 import Gallery from "../../components/Gallery"
