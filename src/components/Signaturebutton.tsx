@@ -7,7 +7,7 @@ const Signaturebutton = () => {
             <div className="">
                 <h1 className=' m-0'>X-RPL</h1>
                 <p className=' fs-4 fw-light'>"Ngoding jalan, ibadah kencang"</p>
-                <div className=" d-flex gap-2 align-items-center justify-content-center">
+                <div className=" d-flex gap-2 align-items-start justify-content-center flex-column flex-lg-row align-items-lg-center">
                     <Link to='/about' className=' btn btn-lg btn-light'>
                         <span>About Us</span>
                         <i className="bi bi-chevron-right mx-2 d-none d-lg-inline"></i>

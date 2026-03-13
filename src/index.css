@@ -1,9 +1,12 @@
 @import url("bootstrap/dist/css/bootstrap.min.css");
 body {
   min-height: 100dvh;
-  padding-top: 6.4dvh;
-  padding-bottom: 6.4dvh;
+  padding-top: 3.6dvh;
+  padding-bottom: 3.6dvh;
   font-family: "Roboto";
+  width: 100dvw;
+  max-width: 100dvw;
+  overflow-x: hidden;
 }
 nav {
   margin-bottom: 2dvh !important;
@@ -105,12 +108,30 @@ nav {
 .gallery {
   image-rendering: optimizeSpeed;
 }
+.igBox {
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  background-image:
+    linear-gradient(white, white),linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.instagram {
+  color: white;
+  width: 6.4dvh;
+  height: 6.4dvh;
+  background: #833ab4;
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
 footer {
   color: #a2cb8b;
   background-color: #000;
   margin-bottom: -6.4dvh;
 }
 @media (max-width: 720px) {
+  .fs-6 {
+    font-size: 0.72rem !important;
+  }
   .fs-5 {
     font-size: 0.8rem !important;
   }

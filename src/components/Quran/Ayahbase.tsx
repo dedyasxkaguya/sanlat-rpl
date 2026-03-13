@@ -33,29 +33,46 @@ interface Translation {
 }
 const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
     const userProps = localStorage.getItem("userData") ? localStorage.getItem("userData") : false
+    const [isPlay, setPlay] = useState<boolean>(false)
     let isLog: boolean = true
     const handleAudio = (a: number) => {
-        const audioAll: HTMLAudioElement[] = Array.from(document.querySelectorAll('audio'))
-        audioAll.forEach((a) => {
-            a.pause()
-        })
-
-        const audio: HTMLAudioElement = document.getElementById(`ayah${a}Audio`) as HTMLAudioElement
-        audio.play()
+        if (!isPlay) {
+            setPlay(true)
+            const audio: HTMLAudioElement = document.getElementById(`ayah${a}Audio`) as HTMLAudioElement
+            audio.play()
+            audio.addEventListener("ended", () => {
+                setPlay(false)
+            })
+        } else {
+            console.log("Masih memutar audio")
+        }
     }
     const handleAutoPlay = () => {
-        let i = 0
-        console.log(data[i].audio)
-        const audio = document.createElement('audio')
-        audio.src = data[i].audio
-        audio.play()
-        audio.addEventListener('ended', () => {
-            i++
-            if (data[i].audio) {
-                audio.src = data[i].audio
-                audio.play()
-            }
-        })
+        if (!isPlay) {
+            setPlay(true)
+            let i = 0
+            console.log(data[i].audio)
+            const audio = document.createElement('audio')
+            audio.id = "mainAudio"
+            audio.classList.add("audioElem")
+            audio.src = data[i].audio
+            audio.play()
+            audio.addEventListener('ended', () => {
+                i++
+                try{
+
+                    if (data[i].audio) {
+                        audio.src = data[i].audio
+                        audio.play()
+                    }else{
+                        console.log("Sudah berakhir")
+                    }
+                }catch(err){
+                    console.log(err)
+                    setPlay(false)
+                }
+            })
+        }
     }
     const handleSave = (a: Ayah, b: Translation) => {
         if (!userProps) {
@@ -91,7 +108,7 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                     <>
                         <main className='p-2 rounded-4 border shadow'>
                             <p className='m-2 text-end fs-3 mb-4'>
-                                <span>{a.text}</span> 
+                                <span>{a.text}</span>
                                 <span className=' d-none d-lg-inline'>({a.numberInSurah})</span>
                             </p>
                             <div className=' m-0 fw-light'>
@@ -112,7 +129,7 @@ const Ayahbase = ({ data, dataIdn }: QuranbaseProps) => {
                                     <span>Salin ayat</span>
                                 </button>
                             </section>
-                            <audio src={a.audio} controls id={`ayah${a.numberInSurah - 1}Audio`} hidden className=' audioAll' />
+                            <audio src={a.audio} controls id={`ayah${a.numberInSurah - 1}Audio`} hidden className=' audioElem' />
                         </main>
                     </>
                 )

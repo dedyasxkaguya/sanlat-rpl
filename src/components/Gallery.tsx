@@ -45,7 +45,7 @@ const Gallery = () => {
             document.querySelectorAll(".placeholder-glow").forEach((a)=>{
                 a.classList.remove("placeholder-glow")
             })
-        }, 1440);
+        }, 2560);
     })
     return (
         <main className="row m-0 mx-auto justify-content-center gallery">

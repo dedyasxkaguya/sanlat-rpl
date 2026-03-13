@@ -6,19 +6,24 @@ export interface DataPesan {
 }
 import data from '../assets/data/messages.json'
 import '../assets/css/messages.css'
+import { useEffect, useState } from 'react';
 const Messages = () => {
+    const [num,setNum] = useState<number>(0)
     const msgData: DataPesan[] = data as DataPesan[]
-    let i:number = 0
-    setInterval(() => {
-        i++
-    }, 1000)
+    const randomize = (max:number) => {
+        let res = Math.round(Math.random()*max)
+        return res
+    }
+    useEffect(()=>{
+        setNum(randomize(msgData.length))
+    })
     return (
         <main className='d-flex justify-content-center align-items-start flex-column col-10 col-lg-8 mx-auto p-4 '>
             <div>
                 <p className=" fs-5" style={{ textAlign: 'justify' }}>
-                    "<i>{msgData[i].isi_pesan}</i>"
+                    "<i>{msgData[num]?.isi_pesan}</i>"
                 </p>
-                <p className=" fs-4 fw-light">~{msgData[i].nama_pengirim}</p>
+                <p className=" fs-4 fw-light">~{msgData[num]?.nama_pengirim}</p>
             </div>
         </main>
     )
